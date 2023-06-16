@@ -125,12 +125,12 @@ const ChannelInput = (props: ChannelInputProps) => {
 
   return (
     <>
-      <KeyboardAvoidingView
+      {/* <KeyboardAvoidingView
         keyboardVerticalOffset={-bottom + keyboardAvoidOffset}
         behavior={KEYBOARD_AVOID_VIEW_BEHAVIOR}
-      >
+      > */}
         <View style={{ paddingLeft: left, paddingRight: right, backgroundColor: colors.background }}>
-          <View onLayout={(e) => setInputHeight(e.nativeEvent.layout.height)} style={styles.inputContainer}>
+          {/* <View onLayout={(e) => setInputHeight(e.nativeEvent.layout.height)} style={styles.inputContainer}>
             {inputMode === 'send' && (
               <SendInput
                 {...props}
@@ -156,10 +156,11 @@ const ChannelInput = (props: ChannelInputProps) => {
                 setMessageToEdit={setMessageToEdit}
               />
             )}
-          </View>
+          </View> */}
+          <View style={{height: 48}}/>
           <SafeAreaBottom height={bottom} />
         </View>
-      </KeyboardAvoidingView>
+      {/* </KeyboardAvoidingView> */}
       {mentionAvailable && props.SuggestedMentionList && (
         <props.SuggestedMentionList
           text={text}
@@ -171,8 +172,7 @@ const ChannelInput = (props: ChannelInputProps) => {
           mentionedUsers={mentionedUsers}
         />
       )}
-    </>
-  );
+    </>  );
 };
 
 const useTypingTrigger = (text: string, channel: SendbirdBaseChannel) => {
